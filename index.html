@@ -8,11 +8,104 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link id="theme-style" rel="stylesheet" href="style.css">
 
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body {
+  font-family: Roboto
+  margin: 0;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides, .mySlides1 {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
 </style>
 </head>
 <body class="w3-light-grey">
@@ -502,11 +595,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </ul>
         </div>
 
-
-        
-        
-
-
   </div>
 <!-- Work Experience End-->
 
@@ -524,7 +612,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
             <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Location API</span>
 
-
             <ul>
               <li class = "w3-text-teal">
                  <p class = "w3-text-dark-grey">
@@ -540,55 +627,47 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
        </div>
 
 <!-- Screenshot Viewer Start-->
-       <div class="row">
-  <div class="column">
-    <img src="screenshot1.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="screenshot2.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="screenshot3.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="screenshot4.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-  </div>
-</div>
 
-<div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="screenshot1.png" style="width:100%">
+  </div>
 
-    <div class="mySlides">
-      <div class="numbertext">1 / 4</div>
-      <img src="screenshot1.png" style="width:100%">
-    </div>
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="screenshot2.png" style="width:100%">
+  </div>
 
-    <div class="mySlides">
-      <div class="numbertext">2 / 4</div>
-      <img src="screenshot2.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 4</div>
-      <img src="screenshot3.png" style="width:100%">
-    </div>
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="screenshot3.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="screenshot4.png" style="width:100%">
+  </div>
     
     <div class="mySlides">
-      <div class="numbertext">4 / 4</div>
-      <img src="screenshot4.png" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="numbertext">5 / 6</div>
+    <img src="screenshot1.png" style="width:100%">
+  </div>
 
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="screenshot4.png" style="width:100%">
+  </div>
+  <a class="prev w3-text-teal w3-xxlarge" onclick="plusSlides(-1)">❮</a>
+  <a class="next w3-text-teal w3-xxlarge" onclick="plusSlides(1)">❯</a>
 
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
 
+  <div class="row">
     <div class="column">
-      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
     </div>
     <div class="column">
       <img class="demo cursor" src="screenshot2.png" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
@@ -599,12 +678,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="column">
       <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
     </div>
+    <div class="column">
+      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
   </div>
 </div>
-
-<script src = "imageviewer.js">
-</script>
-  <hr>
+  
+<hr>
 <!-- Screenshot Viewer End-->
 
       <div class="w3-container">
@@ -620,9 +703,76 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             </p>
             </li>
           </ul>
-          <span class="w3-tag w3-teal w3-hover-opacity w3-center w3-round">View Screenshots <a class="more-link w3-center" href="#"><i class="fa fa-external-link">  </i></a></span>
       </div>
-      <hr>
+
+<!-- Screenshot Viewer Start-->
+
+<div class="container">
+  <div class="mySlides1">
+    <div class="numbertext">1 / 6</div>
+     <img src="welcome_screen.png" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <div class="numbertext">2 / 6</div>
+    <img src="permission_screen.png" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <div class="numbertext">3 / 6</div>
+   <img src="home_screen.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides1">
+    <div class="numbertext">4 / 6</div>
+   <img src="detail_screen.png" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <div class="numbertext">5 / 6</div>
+    <img src="delete_screen.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides1">
+    <div class="numbertext">6 / 6</div>
+   <img src="access_screen.png" style="width:100%">
+  </div>
+    
+  <a class="prev w3-text-teal w3-xxlarge" onclick="plusSlides1(-1)">❮</a>
+  <a class="next w3-text-teal w3-xxlarge" onclick="plusSlides1(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption1"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="welcome_screen.png" style="width:100%" onclick="currentSlide1(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="permission_screen.png" style="width:100%" onclick="currentSlide1(2)" alt="Trolltunga, Norway">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="home_screen.png" style="width:100%" onclick="currentSlide1(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="detail_screen.png" style="width:100%" onclick="currentSlide1(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="delete_screen.png" style="width:100%" onclick="currentSlide1(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="access_screen.png" style="width:100%" onclick="currentSlide1(6)" alt="Snowy Mountains">
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+
+
+<!-- Screenshot Viewer End-->
 
       <div class="w3-container">
         <h4 class="w3-text-dark-grey"><b>Virtual Ruler iOS App</b></h4>
@@ -770,6 +920,70 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+var slideIndex1 = 1;
+showSlides1(slideIndex1);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function plusSlides1(n1) {
+  showSlides1(slideIndex1 += n1);
+}
+
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function currentSlide1(n1) {
+  showSlides1(slideIndex1 = n1);
+}
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+function showSlides1(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides1");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption1");
+  if (n > slides.length) {slideIndex1 = 1}
+  if (n < 1) {slideIndex1 = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex1-1].style.display = "block";
+  dots[slideIndex1-1].className += " active";
+  captionText.innerHTML = dots[slideIndex1-1].alt;
+}
+</script>
 </body>
 </html>
 
