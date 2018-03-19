@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Somesh Arora</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +8,149 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
 </style>
+</head>
 <body class="w3-light-grey">
 
 <!-- Page Container -->
@@ -339,10 +480,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <hr>
       
       <div class="w3-container">
-        <h4 class="w3-opacity"><b>Undergraduate Teaching Assistant | ENGR 1300</b></h4>
+        <h4 class="w3-text-dark-grey"><b>Undergraduate Teaching Assistant</b></h4>
         <img src="UTA.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-         <h6 class="w3-opacity"><b>College of Engineering at UT Arlington, Arlington TX</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2018 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+         <h6 class="w3-text-dark-grey"><b>College of Engineering at UT Arlington, Arlington TX</b></h6>
+          <h6 class="w3-text-dark-grey"><i class="fa fa-calendar w3-text-teal fa-fw w3-margin-right"></i>Jan 2018 - Current</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Teamwork</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Leadership</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Problem Solving</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Matlab</span>
+
           <ul>
             <li class = "w3-text-teal">
                <p class = "w3-text-dark-grey">
@@ -362,11 +508,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
       <div class="w3-container">
 
-        <h4 class="w3-opacity"><b>Mobile Application Developer Co-op</b></h4>
+        <h4 class="w3-text-dark-grey"><b>Mobile Application Developer Co-op</b></h4>
         <img src="Abbott.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-         <h6 class="w3-opacity"><b>Abbott Laboratories, Sylmar CA</b></h6>
+         <h6 class="w3-text-dark-grey"><b>Abbott Laboratories, Sylmar CA</b></h6>
 
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jul 2017 - Jan 2018</h6>
+          <h6 class="w3-text-dark-grey"><i class="fa fa-calendar w3-text-teal fa-fw w3-margin-right"></i>Jul 2017 - Jan 2018</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Agile</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">SDLC</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Mobile Development</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Software Testing</span>
+
+
 
           <ul>
 
@@ -403,10 +555,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
         <div class="w3-container">
-          <h4 class="w3-opacity"><b>Resident Assistant</b></h4>
+          <h4 class="w3-text-dark-grey"><b>Resident Assistant</b></h4>
            <img src="UTA.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-           <h6 class="w3-opacity"><b>Apartment and Residence Life at UT Arlington, Arlington TX</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2016 - May 2017</h6>
+           <h6 class="w3-text-dark-grey"><b>Apartment and Residence Life at UT Arlington, Arlington TX</b></h6>
+          <h6 class="w3-text-dark-grey"><i class="fa fa-calendar w3-text-teal fa-fw w3-margin-right"></i>Aug 2016 - May 2017</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Problem Solving</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Customer Service</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Leadership</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Crisis Management</span>
 
           <ul>
             <li class = "w3-text-teal">
@@ -419,11 +575,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 
         <div class="w3-container">
-          <h4 class="w3-opacity"><b>Student Assistant</b></h4>
+          <h4 class="w3-text-dark-grey"><b>Student Assistant</b></h4>
            <img src="UTA.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-           <img src="AISD.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-           <h6 class="w3-opacity"><b>College of Science at UT Arlington, Arlington TX</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2016 - May 2017</h6>
+           <img src="AISD.JPG" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
+           <h6 class="w3-text-dark-grey"><b>College of Science at UT Arlington, Arlington TX</b></h6>
+          <h6 class="w3-text-dark-grey"><i class="fa w3-text-teal fa-calendar fa-fw w3-margin-right"></i>Aug 2016 - May 2017</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Leadership</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Involvement</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Mentorship</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Customer Service</span>
 
           <ul>
             <li class = "w3-text-teal"> 
@@ -436,10 +596,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 
         <div class="w3-container">
-          <h4 class="w3-opacity"><b>Peer Academic Leader</b></h4>
+          <h4 class="w3-text-dark-grey"><b>Peer Academic Leader</b></h4>
            <img src="UTA.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-           <h6 class="w3-opacity"><b>Division of Student Affairs at UT Arlington, Arlington TX</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2015 - Jun 2016</h6>
+           <h6 class="w3-text-dark-grey"><b>Division of Student Affairs at UT Arlington, Arlington TX</b></h6>
+          <h6 class="w3-text-dark-grey"><i class="fa w3-text-teal fa-calendar fa-fw w3-margin-right"></i>Aug 2015 - Jun 2016</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Leadership</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Teamwork</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Mentorship</span>
+
 
           <ul>
             <li class = "w3-text-teal">
@@ -453,15 +617,22 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
         <div class="w3-container w3-margin-bottom">
-          <h4 class="w3-opacity"><b>Site Leader</b></h4>
+          <h4 class="w3-text-dark-grey"><b>Site Leader</b></h4>
            <img src="UTA.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
-           <h6 class="w3-opacity"><b>Alternative Breaks at UT Arlington, Arlington TX</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2015 - May 2016</h6>
+           <h6 class="w3-text-dark-grey"><b>Alternative Breaks at UT Arlington, Arlington TX</b></h6>
+          <h6 class="w3-text-dark-grey"><i class="fa w3-text-teal fa-calendar fa-fw w3-margin-right"></i>May 2015 - May 2016</h6>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Volunteering</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Environmental Relief</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Leadership</span>
+          <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round w3-theme-d5">Teamwork</span>
 
           <ul>
             <li class = "w3-text-teal">
                <p class = "w3-text-dark-grey">
-              Served as a role model for residential students, used the best judgment, maturity, and helped resident students realize their potential for personal development through group living.
+              Lead a group of 54 students for a week long volunteering project to St. Louis, Missouri.
+            </p>
+            <p class = "w3-text-dark-grey">
+              Assisted with various educational and environmental projects in the Ferguson county.
             </p>
             </li>
           </ul>
@@ -477,17 +648,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 <!-- Projects Start-->
 
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-center w3-margin-bottom w3-padding-16"><i class="fa fa-code-fork fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
+      <div class="w3-container w3-card w3-white w3-text-dark-grey w3-margin-bottom">
+        <h2 class="w3-text-dark-grey w3-center w3-margin-bottom w3-padding-16"><i class="fa fa-code-fork fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
 
       <hr>
         <div class="w3-container">
-            <h4 class="w3-opacity"><b>HUD Speedometer iOS App</b></h4>
+            <h4 class="w3-text-dark-grey"><b>HUD Speedometer iOS App</b></h4>
 
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Swift</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Sketch</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Git</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Location API</span>
+            <span class="w3-tag w3-medium w3-margin-bottom w3-teal w3-hover-opacity w3-round">Swift</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Sketch</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Location API</span>
 
 
             <ul>
@@ -502,18 +673,118 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
               </p>
               </li>
             </ul>
-           <span class="w3-tag w3-teal w3-hover-opacity w3-center w3-round">View Screenshots <a class="more-link w3-center" href="#"><i class="fa fa-external-link">  </i></a></span>
-            
        </div>
-      <hr>
 
+<!-- Screenshot Viewer Start-->
+       <div class="row">
+  <div class="column">
+    <img src="screenshot1.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="screenshot2.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="screenshot3.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="screenshot4.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="screenshot1.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="screenshot2.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="screenshot3.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="screenshot4.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="screenshot2.png" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="screenshot3.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+  <hr>
+<!-- Screenshot Viewer End-->
 
       <div class="w3-container">
-          <h4 class="w3-opacity"><b>Offline Password Wallet iOS App</b></h4>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Swift</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Sketch</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Git</span>
-            <span class="w3-tag w3-teal w3-hover-opacity w3-round">Core Data</span>
+          <h4 class="w3-text-dark-grey"><b>Offline Password Wallet iOS App</b></h4>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Swift</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Sketch</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
+            <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Core Data</span>
           <ul>
             <li class = "w3-text-teal">
                <p class = "w3-text-dark-grey">
@@ -526,12 +797,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <hr>
 
       <div class="w3-container">
-        <h4 class="w3-opacity"><b>Virtual Ruler iOS App</b></h4>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Swift</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Sketch</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Git</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">UIScene</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">ARKit</span>
+        <h4 class="w3-text-dark-grey"><b>Virtual Ruler iOS App</b></h4>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Swift</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Sketch</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">UIScene</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">ARKit</span>
         <ul>
           <li class = "w3-text-teal">
              <p class = "w3-text-dark-grey">
@@ -544,11 +815,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <hr>
 
       <div class="w3-container">
-        <h4 class="w3-opacity"><b>UT Arlington Resource Android App</b></h4>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Java</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">SQLite</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Git</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Android Studio</span>
+        <h4 class="w3-text-dark-grey"><b>UT Arlington Resource Android App</b></h4>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Java</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">SQLite</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Android Studio</span>
         <ul>
           <li class = "w3-text-teal">
              <p class = "w3-text-dark-grey">
@@ -561,11 +832,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <hr>
 
       <div class="w3-container w3-margin-bottom">
-        <h4 class="w3-opacity"><b>POS Kiosk Android App for Visually Impaired </b></h4>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Java</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Google Talkback API</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Git</span>
-        <span class="w3-tag w3-teal w3-hover-opacity w3-round">Android Studio</span>
+        <h4 class="w3-text-dark-grey"><b>POS Kiosk Android App for Visually Impaired </b></h4>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Java</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Google Talkback API</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Git</span>
+        <span class="w3-tag w3-teal w3-medium w3-margin-bottom w3-hover-opacity w3-round">Android Studio</span>
         <ul>
           <li class = "w3-text-teal">
              <p class = "w3-text-dark-grey">
@@ -595,6 +866,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
       <!-- Projects End-->
+
+<!-- Image Viewer Start-->
+
+
+
+
+<!-- Image Viewer End-->
+
+
+
+
+
 
 <!-- Leadership Grid Start-->
     <div class="w3-card w3-round w3-text-dark-grey w3-white">
@@ -645,11 +928,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 
 
-<!-- Relevent Projects Start -->
 
-
-
-<!-- Relevent Projects End -->
 
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
