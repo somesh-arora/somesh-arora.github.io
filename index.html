@@ -65,7 +65,7 @@ img {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0.0, 0, 0, 0.0);
 }
 
 /* Number text (1/3 etc) */
@@ -80,9 +80,12 @@ img {
 /* Container for image text */
 .caption-container {
   text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
+  background-color: teal;
+  opacity: 0.9;
+  padding: 3px 20px;
   color: white;
+  border-radius: 20px
+
 }
 
 .row:after {
@@ -98,8 +101,8 @@ img {
 }
 
 /* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
+.demo, .demo1 {
+  opacity: 0.25;
 }
 
 .active,
@@ -360,8 +363,11 @@ img {
             Outstanding self-starter is the phrase that comes to mind when I think about Somesh. I had the pleasure of working with Somesh as one of the undergraduate teaching assistants in the Engineering Problem Solving course I teach at The University of Texas at Arlington.I was particularly impressed by Somesh’s ability to handle even the toughest students effortlessly. That skill often takes years to develop among educational professionals, but it seemed to come naturally to him. You would never know that he is helping students with a class he never had the opportunity to take. He also voluntarily helped me personally with moving some boxes of previous student work into storage and with preparing the classroom for exams. I will miss his leadership in patiently helping other teaching assistants learn their role in the classroom. As a team member or a leader, Somesh earns my highest recommendation.
             <i class="fa fa-quote-right  w3-text-teal"></i>
           </p>
-         <p class="source"><span class="name">Dr. Kendra Wallis</span><br /><span class="title">Senior Lecturer at UT Arlington</span></p>
-           <p><a class="more-link w3-text-teal" href="https://www.linkedin.com/in/somesharora/"><i class="fa fa-external-link"></i> Read it on Linkedin</a></p> 
+         <img src="kendra_wallis.jpeg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px">
+         <p class="source"><span class="name">Dr. Kendra Wallis</span><br/>
+          <span class="title">Senior Lecturer at UT Arlington</span></p>
+          <br>
+           <p><a class="more-link w3-text-teal w3-center" href="https://www.linkedin.com/in/somesharora/"><i class="fa fa-external-link"></i> Read it on Linkedin</a></p> 
         </div>
       </div>
       <br>
@@ -641,7 +647,7 @@ img {
     
   <div class="mySlides1">
     <div class="numbertext">4 / 6</div>
-   <img src="detail_screen.png" style="width:100%">
+   <img src="access_screen.png" style="width:100%">
   </div>
 
   <div class="mySlides1">
@@ -651,7 +657,7 @@ img {
     
   <div class="mySlides1">
     <div class="numbertext">6 / 6</div>
-   <img src="access_screen.png" style="width:100%">
+   <img src="detail_screen.png" style="width:100%">
   </div>
     
   <a class="prev w3-text-teal w3-xxlarge" onclick="plusSlides1(-1)">❮</a>
@@ -660,33 +666,30 @@ img {
   <div class="caption-container">
     <p id="caption1"></p>
   </div>
-
+<br>
   <div class="row">
     <div class="column">
-      <img class="demo1 cursor" src="welcome_screen.png" style="width:100%" onclick="currentSlide1(1)" alt="The Woods">
+      <img class="demo1 cursor" src="welcome_screen.png" style="width:100%" onclick="currentSlide1(1)" alt="Login Screen | Touch ID required to gain access | Face ID for iPhone X">
     </div>
     <div class="column">
-      <img class="demo1 cursor" src="permission_screen.png" style="width:100%" onclick="currentSlide1(2)" alt="Trolltunga, Norway">
+      <img class="demo1 cursor" src="permission_screen.png" style="width:100%" onclick="currentSlide1(2)" alt="Touch ID Prompt">
     </div>
     <div class="column">
-      <img class="demo1 cursor" src="home_screen.png" style="width:100%" onclick="currentSlide1(3)" alt="Mountains and fjords">
+      <img class="demo1 cursor" src="home_screen.png" style="width:100%" onclick="currentSlide1(3)" alt="Home Screen">
     </div>
     <div class="column">
-      <img class="demo1 cursor" src="detail_screen.png" style="width:100%" onclick="currentSlide1(4)" alt="Northern Lights">
+      <img class="demo1 cursor" src="access_screen.png" style="width:100%" onclick="currentSlide1(4)" alt="Access Information Screen | Shows all stored information">
     </div>
     <div class="column">
-      <img class="demo1 cursor" src="delete_screen.png" style="width:100%" onclick="currentSlide1(5)" alt="Nature and sunrise">
+      <img class="demo1 cursor" src="delete_screen.png" style="width:100%" onclick="currentSlide1(5)" alt="Delete an Entry">
     </div>    
     <div class="column">
-      <img class="demo1 cursor" src="access_screen.png" style="width:100%" onclick="currentSlide1(6)" alt="Snowy Mountains">
+      <img class="demo1 cursor" src="detail_screen.png" style="width:100%" onclick="currentSlide1(6)" alt="Detailed Information Screen">
     </div>
   </div>
 </div>
 
-
-
 <hr>
-
 
 
 <!-- Screenshot Viewer End-->
@@ -719,12 +722,12 @@ img {
 <div class="container">
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <img src="screenshot1.png" style="width:100%">
+    <img src="screenshot2.png" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <img src="screenshot2.png" style="width:100%">
+    <img src="screenshot.png" style="width:100%">
   </div>
 
   <div class="mySlides">
@@ -739,12 +742,12 @@ img {
     
     <div class="mySlides">
     <div class="numbertext">5 / 6</div>
-    <img src="screenshot1.png" style="width:100%">
+    <img src="screenshot5.png" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-    <img src="screenshot4.png" style="width:100%">
+    <img src="screenshot6.png" style="width:100%">
   </div>
   <a class="prev w3-text-teal w3-xxlarge" onclick="plusSlides(-1)">❮</a>
   <a class="next w3-text-teal w3-xxlarge" onclick="plusSlides(1)">❯</a>
@@ -752,25 +755,26 @@ img {
   <div class="caption-container">
     <p id="caption"></p>
   </div>
-
+<br>
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="demo cursor" src="screenshot2.png" style="width:100%" onclick="currentSlide(1)" alt="Day Mode | 8 Mph Speed | Travelling in South direction">
     </div>
     <div class="column">
-      <img class="demo cursor" src="screenshot2.png" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
+      <img class="demo cursor" src="screenshot.png" style="width:100%" onclick="currentSlide(2)" alt="Day Mode | 12 Kph Speed | Travelling in SE direction">
     </div>
     <div class="column">
-      <img class="demo cursor" src="screenshot3.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      <img class="demo cursor" src="screenshot3.png" style="width:100%" onclick="currentSlide(3)" alt="Night Mode | 13 Kph Speed | Travelling in SE direction">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(4)" alt="Night Mode | 60 Mph Speed | Travelling in SW direction">
     </div>
     <div class="column">
-      <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="screenshot1.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      <img class="demo cursor" src="screenshot5.png" style="width:100%" onclick="currentSlide(5)" alt="Day Mode | 70 Mph Speed | Travelling in SW direction">
     </div>    
     <div class="column">
-      <img class="demo cursor" src="screenshot4.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      <img class="demo cursor" src="screenshot6.png" style="width:100%" onclick="currentSlide(6)" alt="Day Mode | 124 Kph Speed | Travelling in West direction | Overspeeding">
     </div>
   </div>
 </div>
