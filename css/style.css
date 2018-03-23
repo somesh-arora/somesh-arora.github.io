@@ -32,8 +32,8 @@ canvas {
 
 .aa_sec {
   position: absolute;
-  z-index: 5;
-  top: 45%;
+  z-index: 1;
+  top: 40%;
   right: 0;
   left: 0;
   margin: 0  auto;
@@ -49,8 +49,8 @@ canvas {
 }
 
 .aa_txt {
-  font: 100 13vmin Roboto;
-  font: 100 13vmax Roboto;
+  font: 80 8vmin Roboto;
+  font: 80 8vmax Roboto;
   text-align: center;
   color: #008080;
 }
