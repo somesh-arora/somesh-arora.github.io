@@ -23,7 +23,33 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
@@ -142,14 +168,75 @@ hr
 .demo:hover {
   opacity: 1;
 }
+
+
+
+
+.separator-type, .title-type, .intro-type, .content-type .intro-type p {
+    position: relative;
+}
+.intro-type .container {
+    padding: 0px 0px 0px 0px !important;
+}
+
+.jumbo {
+  margin-top: 50px;
+}
+.seo-header, .product-header, .intro-type .container h1.white, .company-heading h1 {
+    font-weight: 100 !important;
+    
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+.parallax {
+    background-attachment: inherit !important;
+}
+.parallax {
+    background-attachment: inherit !important;
+}
+.parallax {
+    background-attachment: inherit !important;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: -10;
+}
+.ct-btn-scroll {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 500px;
+    z-index: 9;
+    border-radius: 100%;
+    -webkit-transition: background-color 0.40s ease-in-out;
+    transition: background-color 0.40s ease-in-out;
+}
+img, figure {
+    max-width: 100%;
+}
+
+
+
+
+
 </style>
 </head>
+
+
 <body class="w3-light-grey">
 
 
-  <div class="aa_sec">
-    <div class="aa_txt">
+ <div class="aa_sec">
+   <div class="aa_txt">
     <span class="aa_inner">Somesh Arora</span>
+    <h2>Software Developer</h2>
   </div>
 </div>
 
@@ -160,7 +247,17 @@ hr
     <script  src="js/index.js"></script>
 
 
+<section class="intro-type" id="parallax-one">
+   <div class="container">
+            <a class="ct-btn-scroll ct-js-btn-scroll fa fa-angle-double-down fa-fw w3-jumbo w3-text-teal" href="#section2" style="text-decoration: none"></a>
+   </div> 
+</section>
+<section id="section2"></section>
 
+
+
+            
+           
 
 
 <!-- Page Container -->
