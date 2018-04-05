@@ -41,7 +41,7 @@ canvas {
   background: #ffffff;
 }
 
-.aa_sec {
+.aa_sec { 
   position: absolute;
   z-index: 1;
   top: 40%;
@@ -50,35 +50,26 @@ canvas {
   margin: 0  auto;
 }
 
-.aa_sub_sec {
-  position: absolute;
-  z-index: 5;
-  top: 65%;
-  right: 0;
-  left: 0;
-  margin: 0  auto;
-}
 
 .aa_txt {
-  font: 80 8vmin Roboto;
-  font: 80 8vmax Roboto;
+  font: 50 8vmin sans-serif;
+  font: 50 8vmax sans-serif;
   text-align: center;
   color: #008080;
 }
 
 .aa_sub_txt {
-  font: 60 8vmin Roboto;
+  font: 35 3vmin sans-serif;
+  font: 35 3vmax sans-serif;
   text-align: center;
   color: #008080;
 }
 
 .aa_inner {
   padding: 0 2rem;
-  text-transform: uppercase;
   background: #ffffff00;
 
 }
-
 
 .container {
   position: relative;
@@ -227,7 +218,7 @@ hr
       
 
       
-      animation: bouncearrow 1.2s linear infinite;
+      animation: bouncearrow 1.3s linear infinite;
       
 }
 img, figure {
@@ -240,13 +231,13 @@ img, figure {
 {
   0%
   {
-    transform: translateY(-25px);
+    transform: translateY(-20px);
     opacity: 0.9
     
   }
   25%
   {
-    transform: translateY(-12.5px);
+    transform: translateY(-10px);
     opacity: 0.7
     
   }
@@ -257,12 +248,12 @@ img, figure {
   }
   75%
   {
-    transform: translateY(-12.5px);
+    transform: translateY(-10px);
     opacity: 0.7
   }
   100%
   {
-    transform: translateY(-25px);
+    transform: translateY(-20px);
     opacity: 0.9
   }
   
