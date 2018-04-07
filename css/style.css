@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100);
+@import url(https://fonts.googleapis.com/css?family=sans-serif:100);
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -52,6 +53,7 @@ canvas {
 
 
 .aa_txt {
+  font-family: sans-serif;
   font: 50 8vmin sans-serif;
   font: 50 8vmax sans-serif;
   text-align: center;
@@ -203,7 +205,7 @@ hr
     width: 60px;
     height: 60px;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 0;
     right: 0;
     margin: auto;
