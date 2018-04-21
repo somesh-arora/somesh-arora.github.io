@@ -36,10 +36,11 @@ canvas {
 }
 
 #aa_particles {
-  z-index: 4;
+  position: relative;
+  z-index: 1;
   height: 100%;
   height: 100vh;
-  background: #ffffff;
+  background: #ffffff00;
 }
 
 .aa_sec { 
@@ -53,6 +54,8 @@ canvas {
 
 
 .aa_txt {
+
+  z-index: 1;
   font-family: sans-serif;
   font: 50 8vmin sans-serif;
   font: 50 8vmax sans-serif;
@@ -61,6 +64,7 @@ canvas {
 }
 
 .aa_sub_txt {
+  z-index: 1;
   font: 35 3vmin sans-serif;
   font: 35 3vmax sans-serif;
   text-align: center;
@@ -94,7 +98,7 @@ canvas {
   position: absolute;
   top: 40%;
   width: auto;
-  padding: 16px;
+  padding: : 16px;
   margin-top: -50px;
   color: white;
   font-weight: bold;
