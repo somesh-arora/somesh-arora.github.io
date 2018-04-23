@@ -15,11 +15,11 @@ particlesJS("aa_particles", {
     "shape": {
       "type": "circle",
       "stroke": {
-        "width": 1,
+        "width": 0.8,
         "color": "#008080"
-      },
+      },	
       "polygon": {
-        "nb_sides": 6
+        "nb_sides": 4
       },
       "image": {
         "src": "img/github.svg",
@@ -27,43 +27,43 @@ particlesJS("aa_particles", {
         "height": 100
       }
     },
-    "opacity": {
-      "value": 0.5,
+    "opacity": {	
+      "value": 0.7,
       "random": true,
       "anim": {
-        "enable": true,
-        "speed": 1,
+        "enable": false,
+        "speed": 5,
         "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
-      "value": 3,
+      "value": 4,
       "random": true,
       "anim": {
         "enable": false,
         "speed": 50,
-        "size_min": 0.1,
+        "size_min": 0.1,	
         "sync": false
       } 
     },
-    "line_linked": {
+    "line_linked": {	
       "enable": true,
-      "distance": 150,
+      "distance": 50,
       "color": "#008080",
-      "opacity": 0.5,
-      "width": 1
+      "opacity": 0.8,
+      "width": 0.8
     },
     "move": {
       "enable": true,
       "speed": 6,
-      "direction": "none",
+      "direction": "none",	
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": true,
       "attract": {
-        "enable": false,
+        "enable": true,
         "rotateX": 600,
         "rotateY": 1200
       }
@@ -84,24 +84,24 @@ particlesJS("aa_particles", {
     },
     "modes": {
       "grab": {
-        "distance": 200,
+        "distance": 500,
         "line_linked": {
-          "opacity": 1
+          "opacity": 0.6
         }
       },
       "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
+        "distance": 100,
+        "size": 30,
+        "duration": 3,
         "opacity": 8,
         "speed": 3
       },
       "repulse": {
-        "distance": 400,
-        "duration": 0.4
+        "distance": 200,
+        "duration": 0.5
       },
       "push": {
-        "particles_nb": 4
+        "particles_nb": 1
       },
       "remove": {
         "particles_nb": 2
