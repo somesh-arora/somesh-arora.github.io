@@ -82,7 +82,7 @@ canvas {
 }
 
 /* Hide the images by default */
-.mySlides, .mySlides1, .mySlides2 {
+.mySlides, .mySlides1, .mySlides2, .mySlides3 {
   display: none;
 }
 
@@ -164,7 +164,7 @@ hr
 }
 
 /* Add a transparency effect for thumnbail images */
-.demo, .demo1, .demo2 {
+.demo, .demo1, .demo2, .demo3 {
   opacity: 0.25;
 }
 
