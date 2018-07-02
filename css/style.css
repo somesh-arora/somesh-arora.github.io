@@ -46,7 +46,7 @@ canvas {
 .aa_sec { 
   position: absolute;
   z-index: 1;
-  top: 40%;
+  top: 30%;
   right: 0;
   left: 0;
   margin: 0  auto;
@@ -209,7 +209,7 @@ hr
     width: 60px;
     height: 60px;
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     left: 0;
     right: 0;
     margin: auto;
@@ -224,7 +224,7 @@ hr
       
 
       
-      animation: bouncearrow 1.5s linear infinite;
+      animation: bouncearrow 1.8s linear infinite;
       
 }
 img, figure {
@@ -236,13 +236,13 @@ img, figure {
 {
   0%
   {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
     opacity: 0.9
     
   }
   25%
   {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     opacity: 0.7
     
   }
@@ -253,12 +253,12 @@ img, figure {
   }
   75%
   {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     opacity: 0.7
   }
   100%
   {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
     opacity: 0.9
   }
   
