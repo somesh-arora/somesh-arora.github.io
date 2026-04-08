@@ -1,0 +1,236 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import ExperienceCard from "@components/ExperienceCard.astro";
+import ExperienceTimeline from "@components/ExperienceTimeline.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+const featuredProjects = allProjects
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+const experience = await getCollection("experience");
+const sortedExperience = experience.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+
+// Group Microsoft roles (company starts with "Microsoft") into a timeline
+const microsoftRoles = sortedExperience
+  .filter((exp) => exp.data.company.startsWith("Microsoft"))
+  .map((exp) => ({
+    role: exp.data.role,
+    location: exp.data.location,
+    startDate: exp.data.startDate,
+    endDate: exp.data.endDate,
+    highlights: exp.data.highlights,
+  }));
+
+const nonMicrosoftExperience = sortedExperience.filter(
+  (exp) => !exp.data.company.startsWith("Microsoft")
+);
+
+// Compute Microsoft overall range and duration
+const msEarliest = microsoftRoles.length > 0
+  ? new Date(Math.min(...microsoftRoles.map((r) => r.startDate.getTime())))
+  : new Date();
+const msLatest = microsoftRoles.some((r) => !r.endDate)
+  ? null
+  : microsoftRoles.length > 0
+    ? new Date(Math.max(...microsoftRoles.map((r) => (r.endDate as Date).getTime())))
+    : new Date();
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+}
+
+function computeDuration(start: Date, end: Date | null): string {
+  const endDate = end || new Date();
+  const months = (endDate.getFullYear() - start.getFullYear()) * 12 + (endDate.getMonth() - start.getMonth());
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+  if (years > 0 && remainingMonths > 0) return `${years} yr${years > 1 ? "s" : ""} ${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`;
+  if (years > 0) return `${years} yr${years > 1 ? "s" : ""}`;
+  return `${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`;
+}
+
+const msOverallRange = `${formatDate(msEarliest)} – ${msLatest ? formatDate(msLatest) : "Present"}`;
+const msTotalDuration = computeDuration(msEarliest, msLatest);
+---
+
+<BaseLayout title="Somesh Arora | Member of Technical Staff, iOS at Microsoft AI">
+  <Hero
+    subheadline="Member of Technical Staff, iOS at Microsoft AI"
+    headline="Turning zero‑to‑one ideas into products used by millions."
+    description="Engineering Copilot iOS at Microsoft AI. 7+ years of turning ambitious ideas into polished, high-impact products."
+    primaryCta={{ label: "View Projects", href: "/projects/" }}
+    secondaryCta={{ label: "About Me", href: "/about/" }}
+  />
+
+  {/* Featured Projects (hidden temporarily, will re-enable with new projects)
+  <section class="section section--compact" aria-labelledby="featured-heading">
+    <div class="container">
+      <h2 id="featured-heading" class="section-heading">Featured Work</h2>
+      <p class="section-subheading">
+        Flagship features, SDKs, and platforms shipped at Microsoft AI, Microsoft, Garmin, and Abbott.
+      </p>
+      <div class="project-grid stagger-children">
+        {
+          featuredProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              summary={project.data.summary}
+              role={project.data.role}
+              company={project.data.company}
+              tags={project.data.tags}
+              slug={project.slug}
+              heroImage={project.data.heroImage}
+              featured={true}
+            />
+          ))
+        }
+      </div>
+      <div class="section-cta">
+        <a href="/projects/" class="link">
+          View all projects
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin-left:4px;">
+            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  */}
+
+  <!-- Experience -->
+  <section class="section" aria-labelledby="experience-heading">
+    <div class="container">
+      <h2 id="experience-heading" class="section-heading">Experience</h2>
+      <p class="section-subheading">
+        From building features to leading teams to shipping at the highest level.
+      </p>
+      <div class="experience-list stagger-children">
+        {microsoftRoles.length > 0 && (
+          <ExperienceTimeline
+            company="Microsoft AI"
+            logo="/images/logos/microsoft.jpeg"
+            isCurrent={microsoftRoles.some((r) => !r.endDate)}
+            overallRange={msOverallRange}
+            totalDuration={msTotalDuration}
+            roles={microsoftRoles}
+          />
+        )}
+        {
+          nonMicrosoftExperience.map((exp) => (
+            <ExperienceCard
+              company={exp.data.company}
+              role={exp.data.role}
+              location={exp.data.location}
+              startDate={exp.data.startDate}
+              endDate={exp.data.endDate}
+              highlights={exp.data.highlights}
+              logo={exp.data.logo}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--compact cta-section" aria-labelledby="cta-heading">
+    <div class="container container--narrow" style="text-align:center;">
+      <h2 id="cta-heading" class="section-heading">Let's build something great.</h2>
+      <p class="section-subheading" style="margin-inline:auto;">
+        I'm open to staff-level iOS roles, AI collaborations, and high-impact engineering challenges.
+      </p>
+      <a href="/contact/" class="btn btn--primary btn--glow">Get in Touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .section-cta {
+    text-align: center;
+  }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .cta-section {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-8);
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: var(--gradient-accent);
+    opacity: 0.5;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: all var(--duration-normal) var(--ease-out);
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn--primary {
+    background: var(--gradient-accent);
+    color: #fff;
+    border: none;
+  }
+
+  .btn--primary:hover {
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
+  }
+
+  .btn--glow::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: var(--gradient-accent);
+    z-index: -1;
+    filter: blur(16px);
+    opacity: 0.4;
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .btn--glow:hover::after {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 640px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+const sortedProjects = allProjects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<BaseLayout
+  title="Projects | Somesh Arora"
+  description="iOS and AI projects by Somesh Arora, including health tech, connected hardware, and privacy-first apps."
+>
+  <section class="section" aria-labelledby="projects-heading">
+    <div class="container">
+      <h1 id="projects-heading" class="section-heading">Projects</h1>
+      <p class="section-subheading">
+        Case studies and projects spanning iOS development, health tech, connected hardware, and privacy-first architecture.
+      </p>
+      <div class="project-grid">
+        {
+          sortedProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              summary={project.data.summary}
+              role={project.data.role}
+              company={project.data.company}
+              tags={project.data.tags}
+              slug={project.slug}
+              heroImage={project.data.heroImage}
+              featured={project.data.featured}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 640px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

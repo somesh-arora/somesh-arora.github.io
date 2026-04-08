@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somesharora.com/sitemap-index.xml
