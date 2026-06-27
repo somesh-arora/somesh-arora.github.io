@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["C6AQM8MP6F.com.somesharora.Primer"],
+        "components": [
+          {
+            "/": "/open/*",
+            "comment": "Latent deep links: App Store custom product pages + marketing links"
+          },
+          {
+            "/": "/latent-site/e/*",
+            "comment": "In-App Event deep links when hosted under the latent-site project page"
+          },
+          {
+            "/": "/e/*",
+            "comment": "In-App Event deep links when hosted at the apex"
+          }
+        ]
+      }
+    ]
+  }
+}
